@@ -1,25 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter, Route } from 'react-router-dom';
+import SlideRoutes from 'react-slide-routes';
+
+import PostList from './components/pages/PostList';
+import PostDetail from './components/pages/PostDetail';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <div className="Contents">
+          <SlideRoutes duration={500} >
+            <Route index path="/" element={<PostList/>} />
+            <Route index path="/post/:postId" element={<PostDetail/>} />
+          </SlideRoutes>
+        </div>
+      </div>
+    </BrowserRouter>
   );
 }
 
