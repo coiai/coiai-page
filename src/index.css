@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.Contents {
+  min-height: 100vh;
+  text-align: left;
+  margin-bottom: 100px;
+}
+
+.Contents .css-1r1lita-SlideRoutes {
+  display: block;
+}

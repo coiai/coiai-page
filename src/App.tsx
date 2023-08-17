@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import SlideRoutes from 'react-slide-routes';
 
+import Navigation from './components/layout/Navigation';
 import PostList from './components/pages/PostList';
 import PostDetail from './components/pages/PostDetail';
 import './App.css';
@@ -11,6 +12,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <div className="Contents">
+          <Navigation />
           <SlideRoutes duration={500} >
             <Route index path="/" element={<PostList/>} />
             <Route index path="/post/:postId" element={<PostDetail/>} />

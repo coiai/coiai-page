@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import styled from '@emotion/styled';
 
 interface Post {
   id: number;
@@ -27,11 +28,41 @@ const PostDetail: React.FC = () => {
   }
 
   return (
-    <div>
+    <SArticle>
       <h1>{post.title.rendered}</h1>
       <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
-    </div>
+    </SArticle>
   );
 };
+
+const SArticle = styled.article`
+  padding: 0 16px;
+  max-width: 760px;
+  margin: auto;
+
+  .wp-block-code {
+    padding: 24px 24px;
+    color: white;
+    background-color: #2e2e2e;
+  }
+
+  figure {
+    width: 100%;
+    margin: 0;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    // youtubeサムネイル用調整
+    iframe {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16/9;
+    }
+  }
+`
 
 export default PostDetail;
